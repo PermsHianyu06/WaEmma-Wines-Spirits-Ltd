@@ -10,7 +10,7 @@ const { sequelize, testConnection } = require('./config/database');
 const { initializeDatabase } = require('./models');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 // Security middleware
 app.use(helmet());
@@ -25,6 +25,7 @@ app.use(limiter);
 // CORS configuration
 app.use(cors({
   origin: [
+    'http://localhost:5000',
     'http://localhost:3000',
     'http://localhost:3001', 
     'http://localhost:3002',
