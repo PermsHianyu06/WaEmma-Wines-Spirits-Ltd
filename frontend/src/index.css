@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  /* Improve touch targets for mobile */
+  button, a {
+    @apply min-h-[44px];
+  }
+  
+  /* Better input styling for mobile */
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"], 
+  input[type="number"], 
+  select, 
+  textarea {
+    @apply text-base;
+  }
+  
+  @media (max-width: 640px) {
+    input[type="text"], 
+    input[type="email"], 
+    input[type="password"], 
+    input[type="number"], 
+    select, 
+    textarea {
+      @apply text-[16px];
+    }
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  /* Improve touch targets for mobile */
+  button, a {
+    @apply min-h-[44px];
+  }
+  
+  /* Better input styling for mobile */
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"], 
+  input[type="number"], 
+  select, 
+  textarea {
+    @apply text-base;
+  }
+  
+  @media (max-width: 640px) {
+    input[type="text"], 
+    input[type="email"], 
+    input[type="password"], 
+    input[type="number"], 
+    select, 
+    textarea {
+      @apply text-[16px];
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-waemma-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 min-h-[44px] px-4 py-2;
+  }
+  
+  .btn-primary {
+    @apply bg-waemma-primary text-white hover:bg-waemma-primary/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-waemma-secondary text-white hover:bg-waemma-secondary/90;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 bg-white hover:bg-gray-50 hover:text-gray-900;
+  }
+  
+  /* Waemma-specific styling */
+  .waemma-gradient {
+    @apply bg-gradient-to-r from-waemma-primary to-waemma-secondary;
+  }
+  
+  .waemma-shadow {
+    box-shadow: 0 4px 6px -1px rgba(217, 119, 6, 0.1), 0 2px 4px -1px rgba(217, 119, 6, 0.06);
+  }
+  
+  .btn-waemma {
+    @apply bg-waemma-primary hover:bg-waemma-accent text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .text-waemma {
+    @apply text-waemma-primary;
+  }
+  
+  .border-waemma {
+    @apply border-waemma-primary;
+  }
+  
+  .focus-waemma {
+    @apply focus:ring-2 focus:ring-waemma-primary focus:border-waemma-primary;
+  }
+  
+  /* Mobile-first modal */
+  .modal {
+    @apply fixed inset-0 z-50 bg-gray-600 bg-opacity-50 overflow-y-auto;
+  }
+  
+  .modal-content {
+    @apply relative mx-auto p-5 border shadow-lg rounded-md bg-white;
+    @apply w-11/12 max-w-2xl;
+    @apply mt-4 mb-4;
+  }
+  
+  @media (min-width: 768px) {
+    .modal-content {
+      @apply mt-20;
+    }
+  }
+  
+  /* Better table responsiveness */
+  .table-responsive {
+    @apply overflow-x-auto;
+  }
+  
+  .table-responsive table {
+    @apply min-w-full;
+  }
+  
+  /* Mobile-optimized cards */
+  .card {
+    @apply bg-white rounded-lg shadow-sm border;
+  }
+  
+  .card-mobile {
+    @apply rounded-none border-x-0;
+  }
+  
+  @media (max-width: 640px) {
+    .card {
+      @apply card-mobile;
+    }
+  }
+  
+  /* Loading states */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-b-2 border-waemma-primary;
+  }
+  
+  /* Focus states for accessibility */
+  .focus-outline {
+    @apply focus:outline-none focus:ring-2 focus:ring-waemma-primary focus:ring-offset-2;
+  }
+  
+  /* Safe area for mobile devices with notches */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
