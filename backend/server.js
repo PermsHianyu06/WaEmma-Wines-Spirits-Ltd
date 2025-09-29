@@ -89,8 +89,13 @@ app.use((req, res) => {
 
 const startServer = async () => {
   try {
-    // Initialize database and models
-    await initializeDatabase();
+    // Try to initialize database and models, but don't fail if it doesn't work
+    try {
+      await initializeDatabase();
+    } catch (dbError) {
+      console.error('⚠️ Database initialization failed:', dbError.message);
+      console.log('🚀 Starting server without database connection...');
+    }
     
     app.listen(PORT, () => {
       console.log(`🚀 Waemma Wines & Spirits Ltd API Server running on port ${PORT}`);
